@@ -194,7 +194,6 @@ print("Selected Features:")
 print(selected_features)
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/da36751c-c637-4aef-b1d4-ed70c4ff73e3)
-
 ```
 from scipy.stats import chi2_contingency
 import seaborn as sns
@@ -202,20 +201,17 @@ tips=sns.load_dataset('tips')
 tips.head()
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/c81452ff-0163-49ee-aa0b-214d976d8cb9)
-
 ```
 contingency_table=pd.crosstab(tips['sex'],tips['time'])
 print(contingency_table)
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/1cdf9bb8-86ba-445f-8f3e-1dfa3439ed34)
-
 ```
 chi2, p, _, _=chi2_contingency(contingency_table)
 print(f"Chi-Square Statistic: {chi2}")
 print(f"P-value: {p}")
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/3527df64-8333-42ef-b737-1d6dba433d2d)
-
 # RESULT:
 Thus to read the given data and perform Feature Scaling and Feature Selection process was performed successfully.
 
