@@ -196,6 +196,9 @@ print(f"Chi-Square Statistic: {chi2}")
 print(f"P-value: {p}")
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/3527df64-8333-42ef-b737-1d6dba433d2d)
+
+
+
 # RESULT:
 Thus to read the given data and perform Feature Scaling and Feature Selection process was performed successfully.
 
