@@ -6,17 +6,14 @@ data to a file.
 # ALGORITHM:
 STEP 1:Read the given Data.
 STEP 2:Clean the Data Set using Data Cleaning Process.
-
 STEP 3:Apply Feature Scaling for the feature in the data set.
-
 STEP 4:Apply Feature Selection for the feature in the data set.
-
 STEP 5:Save the data to the file.
 
 # FEATURE SCALING:
 1. Standard Scaler: It is also called Z-score normalization. It calculates the z-score of each value and replaces the value with the calculated Z-score. The features are then rescaled with x̄ =0 and σ=1
 2. MinMaxScaler: It is also referred to as Normalization. The features are scaled between 0 and 1. Here, the mean value remains same as in Standardization, that is,0.
-3. Maximum absolute scaling: Maximum absolute scaling scales the data to its maximum value; that is,it divides every observation by the maximum value of the variable.The result of the values vary within the range of -1 to 1.
+3. Maximum absolute scaling: Maximum absolute scaling scales the data to its maximum value;that is,it divides every observation by the maximum value of the variable.The result of the values vary within the range of -1 to1.
 4. RobustScaler: RobustScaler transforms the feature vector by subtracting the median and then dividing by the interquartile range (75% value — 25% value).
 
 # FEATURE SELECTION:
@@ -84,7 +81,6 @@ df3[['Height','Weight']]=scaler.fit_transform(df3[['Height','Weight']])
 df3
 ```
 ![maxabs-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/8278f50e-ef00-4e58-abe6-141fd23aa3e2)
-
 ```
 df4=pd.read_csv("/content/bmi.csv")
 from sklearn.preprocessing import RobustScaler
@@ -93,7 +89,6 @@ df4[['Height','Weight']]=scaler.fit_transform(df4[['Height','Weight']])
 df4.head()
 ```
 ![robust-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/9db3bd41-cec6-4cb0-9feb-4ed85ad5c1fa)
-
 ```
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix
@@ -101,62 +96,51 @@ data=pd.read_csv('/content/income(1) (1).csv',na_values=[" ?"])
 data
 ```
 ![conf-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/a47d809a-8ff6-43eb-bd0d-dafcf0f1d2e6)
-
 ```
 data.isnull().sum()
 ```
 ![isnull-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/d45f1996-a241-46a5-94b3-24d12c7c13e4)
-
 ```
-
 data2=data.dropna(axis=0)
 data2
 ```
 ![dropnaaxis-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/d315acc2-337e-4ce9-bb82-b05e0cec7313)
-
 ```
 sal=data['SalStat']
 data2['SalStat']=data2['SalStat'].map({' less than or equal to 50,000':0,' greater than 50,000':1})
 print(data2['SalStat'])
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/5eb03112-9f83-464d-a319-ef6e83deb7c0)
-
 ```
 sal2=data2['SalStat']
 dfs=pd.concat([sal,sal2],axis=1)
 dfs
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/7a399c75-688f-4391-9fa8-4c5909669f96)
-
 ```
 data2
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/d21c85eb-bef9-46c1-8e47-d746ad9e6418)
-
 ```
 new_data=pd.get_dummies(data2,drop_first=True)
 new_data
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/15f3e5a8-e060-4d97-846d-350072e067c4)
-
 ```
 columns_list=list(new_data.columns)
 print(columns_list)
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/804aeff4-a271-4491-8834-4471f49fd4f1)
-
 ```
 features = list(set(columns_list)-set(['SalStat']))
 print(features)
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/120db1bd-c5ec-4753-aad3-c67577d11821)
-
 ```
 y=new_data['SalStat'].values
 print(y)
 ```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/3e98a30f-2b8a-4c74-8300-6ffcdfe0675d)
-
 ```
 x=new_data[features].values
 print(x)
