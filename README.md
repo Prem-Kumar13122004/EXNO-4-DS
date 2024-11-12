@@ -70,11 +70,7 @@ df.head(10)
 from sklearn.preprocessing import Normalizer
 scaler=Normalizer()
 df2[['Height','Weight']]=scaler.fit_transform(df2[['Height','Weight']])
-df2
-```
-![normalizer-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/1ef0c6b8-914c-4437-ab56-ad5360281379)
-
-```
+df2```![normalizer-4](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/1ef0c6b8-914c-4437-ab56-ad5360281379)```
 from sklearn.preprocessing import MaxAbsScaler
 scaler=MaxAbsScaler()
 df3[['Height','Weight']]=scaler.fit_transform(df3[['Height','Weight']])
@@ -177,24 +173,18 @@ selected_features=X.columns[selected_feature_indices]
 print("Selected Features:")
 print(selected_features)
 ```
-![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/da36751c-c637-4aef-b1d4-ed70c4ff73e3)
-```
+![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/da36751c-c637-4aef-b1d4-ed70c4ff73e3)```
 from scipy.stats import chi2_contingency
 import seaborn as sns
 tips=sns.load_dataset('tips')
-tips.head()
-```
-![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/c81452ff-0163-49ee-aa0b-214d976d8cb9)
-```
+tips.head()```
+![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/c81452ff-0163-49ee-aa0b-214d976d8cb9)```
 contingency_table=pd.crosstab(tips['sex'],tips['time'])
-print(contingency_table)
-```
-![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/1cdf9bb8-86ba-445f-8f3e-1dfa3439ed34)
-```
+print(contingency_table)```
+![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/1cdf9bb8-86ba-445f-8f3e-1dfa3439ed34)```
 chi2, p, _, _=chi2_contingency(contingency_table)
 print(f"Chi-Square Statistic: {chi2}")
-print(f"P-value: {p}")
-```
+print(f"P-value: {p}")```
 ![image](https://github.com/BALUREDDYVELAYUDHAMGOWTHAM/EXNO-4-DS/assets/119559905/3527df64-8333-42ef-b737-1d6dba433d2d)
 
 
